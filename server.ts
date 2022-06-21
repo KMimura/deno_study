@@ -18,6 +18,12 @@ router.get('/ping', (ctx: RouterContext) => {
   ctx.response.body = "pong\n";
 })
 
+router.get('/random_num', (ctx: RouterContext) => {
+  console.log(ctx)
+  const rand = Math.random()
+  ctx.response.body = rand
+})
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 
